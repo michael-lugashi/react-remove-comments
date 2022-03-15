@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 .App {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   background-color: #517795;
+  font-family: 'RocknRoll One', sans-serif;
 }
 .title {
   margin-top: 0;
