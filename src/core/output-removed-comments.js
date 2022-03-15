@@ -7,11 +7,12 @@ function OutputRemovedComments({ removedCommentsText }) {
     <div>
       <header className="actions-header">
         <Link
+          className="link-styling"
           to={{
             pathname: '/read-file',
           }}
         >
-          <button>upload file</button>
+          <button className="header-button">Upload New File</button>
         </Link>
       </header>
       <div className="display-text"> {removedCommentsText}</div>

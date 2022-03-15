@@ -31,21 +31,28 @@ function TextFileUpload({ setRemovedCommentsText }) {
   return (
     <div>
       <header className="actions-header">
-        <input
-          type="file"
-          onChange={async (e) => {
-            const file = e.target.files[0];
-            console.log(file.type);
-            const fileText = await file.text();
-            setText(fileText);
-          }}
-        />
+        <label for="file-upload" className="header-button">
+          Select A Text File
+          <input
+            id="file-upload"
+            type="file"
+            className="file-input"
+            onChange={async (e) => {
+              const file = e.target.files[0];
+              console.log(file.type);
+              const fileText = await file.text();
+              setText(fileText);
+            }}
+          />
+        </label>
         <Link
+          className="link-styling"
           to={{
             pathname: text ? '/output' : '/read-file',
           }}
         >
           <button
+            className="header-button"
             onClick={() => {
               if (!text) {
                 alert('text file is eiter empty or not uploaded!');
@@ -53,7 +60,7 @@ function TextFileUpload({ setRemovedCommentsText }) {
               setRemovedCommentsText(removeComments(text));
             }}
           >
-            remove comments
+            Remove Comments
           </button>
         </Link>
       </header>
