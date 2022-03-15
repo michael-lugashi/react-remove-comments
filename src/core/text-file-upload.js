@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function TextFileUpload(props) {
-  const [text, setText] = React.useState('');
+function TextFileUpload({setRemovedCommentsText}) {
+  const [text, setText] = useState('');
 
   const removeComments = (fileText) => {
     let removedCommentsText = '';
@@ -34,7 +34,8 @@ function TextFileUpload(props) {
         onChange={async (e) => {
           const file = e.target.files[0];
           const fileText = await file.text();
-          setText(removeComments(fileText));
+          setText(fileText);
+          setRemovedCommentsText(removeComments(fileText));
         }}
       />
 
