@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function TextFileUpload({setRemovedCommentsText}) {
+function TextFileUpload( {setRemovedCommentsText}) {
   const [text, setText] = useState('');
 
   const removeComments = (fileText) => {
@@ -35,11 +36,24 @@ function TextFileUpload({setRemovedCommentsText}) {
           const file = e.target.files[0];
           const fileText = await file.text();
           setText(fileText);
-          setRemovedCommentsText(removeComments(fileText));
         }}
       />
 
       <div>{text}</div>
+
+      <Link
+        to={{
+          pathname: '/output',
+        }}
+      >
+        <button
+          onClick={() => {
+            setRemovedCommentsText(removeComments(text));
+          }}
+        >
+          remove comments
+        </button>
+      </Link>
     </div>
   );
 }
