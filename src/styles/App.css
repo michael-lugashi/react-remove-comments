@@ -1,6 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 .App {
- margin: 10vw;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #517795;
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 1.5vw;
 }
-.display-text{
+.title {
+  margin-top: 0;
+}
+.App-header {
+  text-align: center;
+  background-color: #445c7f;
+  color: #c3af5b;
+}
+.display-text {
   white-space: pre;
+  width: 80vw;
+  min-height: 80vh;
+  margin: auto;
+  background-color: #dfdbc8;
+  color: #445c7f;
+  font-size: 1vw;
+  padding: 1vw;
 }
+
+.actions-header {
+  height: 4vw;
+  background-color: #c3af5b;
+  color: #445c7f;
+  width: 82vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#file-upload::-webkit-file-upload-button {
+  display: none;
+}
+#file-upload.file-input {
+  font-size: 1.5vw;
+  max-width: 15vw;
+  margin-left: 1vw;
+}
+.header-button {
+  -moz-box-sizing: content-box; /* or `border-box` */
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  background-color: #517795;
+  color: #c3af5b;
+  border: 0.2vw solid #445c7f;
+  border-radius: 1vw;
+  padding: .5vw;
+  font-size: 1.25vw;
+  cursor: pointer;
+  height: 1.25vw;
+}
+.link-styling {
+  text-decoration: none;
+}
+.header-button:hover {
+  background-color: #445c7f;
+  color: #c3af5b;
+}
+/* .file-input {
+  display: none;
+} */

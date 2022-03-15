@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Remove Comments of Text File</h1>
+        <h1 className='title'>Remove Comments of Text File</h1>
       </header>
       <Router>
         <Routes>

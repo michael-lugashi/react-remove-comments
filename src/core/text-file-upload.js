@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function TextFileUpload( {setRemovedCommentsText}) {
+function TextFileUpload({ setRemovedCommentsText }) {
   const [text, setText] = useState('');
 
   const removeComments = (fileText) => {
@@ -30,34 +30,42 @@ function TextFileUpload( {setRemovedCommentsText}) {
 
   return (
     <div>
-      <input
-        type="file"
-        onChange={async (e) => {
-          const file = e.target.files[0];
-          const fileText = await file.text();
-          setText(fileText);
-        }}
-      />
-
-      <div className='display-text'>{text}</div>
-
-      <Link
-        to={{
-          pathname: text? '/output': '/read-file',
-        }}
-      >
-        <button 
-        
-          onClick={() => {
-            if (!text) {
-                alert('text file is eiter empty or not uploaded!');
-            }
-            setRemovedCommentsText(removeComments(text));
+      <header className="actions-header">
+        <label for="file-upload" className="header-button">
+          Select A Text File
+          <input
+            id="file-upload"
+            type="file"
+            className="file-input"
+            onChange={async (e) => {
+              const file = e.target.files[0];
+              console.log(file.type);
+              const fileText = await file.text();
+              setText(fileText);
+            }}
+          />
+        </label>
+        <Link
+          className="link-styling"
+          to={{
+            pathname: text ? '/output' : '/read-file',
           }}
         >
-          remove comments
-        </button>
-      </Link>
+          <button
+            className="header-button"
+            onClick={() => {
+              if (!text) {
+                alert('text file is eiter empty or not uploaded!');
+              }
+              setRemovedCommentsText(removeComments(text));
+            }}
+          >
+            Remove Comments
+          </button>
+        </Link>
+      </header>
+
+      <div className="display-text">{text}</div>
     </div>
   );
 }
