@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function TextFileUpload(props) {
-  const [text, setText] = React.useState('');
+function TextFileUpload( {setRemovedCommentsText}) {
+  const [text, setText] = useState('');
 
   const removeComments = (fileText) => {
     let removedCommentsText = '';
@@ -34,11 +35,29 @@ function TextFileUpload(props) {
         onChange={async (e) => {
           const file = e.target.files[0];
           const fileText = await file.text();
-          setText(removeComments(fileText));
+          setText(fileText);
         }}
       />
 
-      <div>{text}</div>
+      <div className='display-text'>{text}</div>
+
+      <Link
+        to={{
+          pathname: text? '/output': '/read-file',
+        }}
+      >
+        <button 
+        
+          onClick={() => {
+            if (!text) {
+                alert('text file is eiter empty or not uploaded!');
+            }
+            setRemovedCommentsText(removeComments(text));
+          }}
+        >
+          remove comments
+        </button>
+      </Link>
     </div>
   );
 }
