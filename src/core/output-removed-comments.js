@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function OutputRemovedComments({ removedCommentsText }) {
   //   console.log(props);
   return (
-    <div>
+    <div className='display-text'>
       output: {removedCommentsText}
       <Link
         to={{

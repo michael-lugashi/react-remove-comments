@@ -1,4 +1,6 @@
 .App {
-  text-align: center;
+ margin: 10vw;
 }
-
+.display-text{
+  white-space: pre;
+}

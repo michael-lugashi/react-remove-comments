@@ -39,15 +39,19 @@ function TextFileUpload( {setRemovedCommentsText}) {
         }}
       />
 
-      <div>{text}</div>
+      <div className='display-text'>{text}</div>
 
       <Link
         to={{
-          pathname: '/output',
+          pathname: text? '/output': '/read-file',
         }}
       >
-        <button
+        <button 
+        
           onClick={() => {
+            if (!text) {
+                alert('text file is eiter empty or not uploaded!');
+            }
             setRemovedCommentsText(removeComments(text));
           }}
         >
