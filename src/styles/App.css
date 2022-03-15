@@ -23,13 +23,14 @@
   background-color: #dfdbc8;
   color: #445c7f;
   font-size: 1vw;
+  padding: 1vw;
 }
 
 .actions-header {
   height: 4vw;
   background-color: #c3af5b;
   color: #445c7f;
-  width: 80vw;
+  width: 82vw;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
