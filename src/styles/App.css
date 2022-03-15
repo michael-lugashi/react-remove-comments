@@ -1,6 +1,32 @@
 .App {
- margin: 10vw;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #517795;
 }
-.display-text{
+.title {
+  margin-top: 0;
+}
+.App-header {
+  text-align: center;
+  background-color: #445c7f;
+  color: #c3af5b;
+}
+.display-text {
   white-space: pre;
+  width: 80vw;
+  min-height: 80vh;
+  margin: auto;
+  background-color: #dfdbc8;
+}
+
+.actions-header {
+  
+  background-color: #c3af5b;
+  color: #445c7f;
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  
 }

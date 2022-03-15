@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function TextFileUpload( {setRemovedCommentsText}) {
+function TextFileUpload({ setRemovedCommentsText }) {
   const [text, setText] = useState('');
 
   const removeComments = (fileText) => {
@@ -30,34 +30,35 @@ function TextFileUpload( {setRemovedCommentsText}) {
 
   return (
     <div>
-      <input
-        type="file"
-        onChange={async (e) => {
-          const file = e.target.files[0];
-          const fileText = await file.text();
-          setText(fileText);
-        }}
-      />
-
-      <div className='display-text'>{text}</div>
-
-      <Link
-        to={{
-          pathname: text? '/output': '/read-file',
-        }}
-      >
-        <button 
-        
-          onClick={() => {
-            if (!text) {
-                alert('text file is eiter empty or not uploaded!');
-            }
-            setRemovedCommentsText(removeComments(text));
+      <header className="actions-header">
+        <input
+          type="file"
+          onChange={async (e) => {
+            const file = e.target.files[0];
+            console.log(file.type);
+            const fileText = await file.text();
+            setText(fileText);
+          }}
+        />
+        <Link
+          to={{
+            pathname: text ? '/output' : '/read-file',
           }}
         >
-          remove comments
-        </button>
-      </Link>
+          <button
+            onClick={() => {
+              if (!text) {
+                alert('text file is eiter empty or not uploaded!');
+              }
+              setRemovedCommentsText(removeComments(text));
+            }}
+          >
+            remove comments
+          </button>
+        </Link>
+      </header>
+
+      <div className="display-text">{text}</div>
     </div>
   );
 }
