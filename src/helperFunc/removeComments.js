@@ -40,7 +40,7 @@ const removeComments = (fileText) => {
       removedCommentsText += currentLine;
       currentLine = '';
     } else if (!singleLineSkip && !multiLineSkip) {
-      currentLine += fileText[i];
+      currentLine += fileText.charAt(i);
     }
   }
   return removedCommentsText;
