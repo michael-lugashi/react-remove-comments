@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
 .App {
   margin: 0;
   padding: 0;
@@ -13,13 +14,12 @@
   text-align: center;
   background-color: #445c7f;
   color: #c3af5b;
-
 }
 .display-text {
   white-space: pre;
   width: fit-content;
   min-width: 80vw;
-  min-height: 80vh;
+  min-height: 70vh;
   margin: auto;
   background-color: #dfdbc8;
   color: #445c7f;
@@ -46,7 +46,7 @@
   margin-left: 1vw;
 }
 .header-button {
-  -moz-box-sizing: content-box; /* or `border-box` */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   display: flex;
@@ -55,18 +55,15 @@
   color: #c3af5b;
   border: 0.2vw solid #445c7f;
   border-radius: 1vw;
-  padding: .5vw;
+  padding: 0.5vw;
   font-size: 1.25vw;
   cursor: pointer;
   height: 1.25vw;
-}
-.link-styling {
-  text-decoration: none;
 }
 .header-button:hover {
   background-color: #445c7f;
   color: #c3af5b;
 }
-/* .file-input {
-  display: none;
-} */
+.link-styling {
+  text-decoration: none;
+}
