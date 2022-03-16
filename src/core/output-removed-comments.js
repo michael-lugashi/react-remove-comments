@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function OutputRemovedComments({ removedCommentsText }) {
-  //   console.log(props);
+  useEffect(() => {
+    window.addEventListener('load', changePath);
+    return () => {
+      window.removeEventListener('load', changePath);
+    };
+  }, []);
+  const changePath = () => {
+    window.location.pathname = '/read-file';
+  };
   const createDownloadLink = (text) => {
     const blob = new Blob([text], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
