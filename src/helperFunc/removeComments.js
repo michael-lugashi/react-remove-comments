@@ -43,6 +43,9 @@ const removeComments = (fileText) => {
       currentLine += fileText.charAt(i);
     }
   }
+  if (currentLine) {
+    removedCommentsText += currentLine;
+  }
   return removedCommentsText;
 };
 
